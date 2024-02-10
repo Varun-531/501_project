@@ -1,0 +1,89 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Container for the signup form */
+section {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #e6f7ff; /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Header with title */
+header {
+    text-align: center;
+}
+
+h1 {
+    color: #3498db; /* Blue title color */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Signup form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form labels */
+label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Form inputs */
+input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+/* Form button */
+button {
+    background-color: #3498db; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Form button hover effect */
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Login button */
+button.login-button {
+    background-color: #3498db; /* Blue color for consistency */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Login button hover effect */
+button.login-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+}

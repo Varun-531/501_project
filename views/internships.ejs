@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Your head content goes here -->
+    <link rel="stylesheet" href="./css/style2.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Create Internship</h1>
+        <!-- Logout Button -->
+        <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+        <button type="button" onclick="window.location.href='/home'" class="signup-button">Home</button>
+        <!-- <a href="/home">Home</a> -->
+    </header>
+
+    <section>
+
+        <!-- <form id="internshipForm" action="/create-internship" method="POST"> -->
+        <form id="internshipForm" action="/create-internship" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required>
+
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </section>
+
+    <footer>
+        <p>&copy; <%= year %> Student Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function submitInternship() {
+            console.log("Ok1");
+            const form = document.getElementById('internshipForm');
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('/create-internship', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    console.log('Internship created successfully!');
+                    // Internship created successfully, redirect or show a success message
+                    window.location.href = '/admin/create-internship';
+                    console.log("Ok");
+                } else {
+                    // Handle the error, show a message, or redirect as needed
+                    console.error('Failed to create internship');
+                    console.log("Not OK ");
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

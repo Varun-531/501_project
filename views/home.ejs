@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/style1.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Student Hub</h1>
+        <% if (user) { %>
+            <p>Hello, <%= user.firstName %>
+                    <%= user.lastName %>!</p>
+            <% if (isAdmin) { %>
+                <a id="intern" href="/internships">Add Internship</a>
+                <% } %>
+                    <form action="/logout" method="post">
+                        <button type="submit">Logout</button>
+                    </form>
+                    <% } else { %>
+                        <p>No User</p>
+                        <% } %>
+    </header>
+
+    <section>
+        <h2>Available Internships</h2>
+        <% if (internships && internships.length > 0) { %>
+            <ul class="internships-container">
+                <% internships.forEach((internship) => { %>
+                    <li class="internship">
+                        <strong style="font-size: 100px;">
+                            <%= internship.title %>
+                        </strong><br>
+                        <p><strong>Description:</strong> <%= internship.description %></p>
+                        <p><strong>Location:</strong> <%= internship.location %></p>
+                        <p><strong>Start Date:</strong> <%= internship.start_date %></p>
+                        <p><strong>End Date:</strong> <%= internship.end_date %></p>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No internships available at the moment.</p>
+        <% } %>
+    </section>
+    
+
+    <footer>
+        <p>&copy; <%= year %> Student Hub. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

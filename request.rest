@@ -1,0 +1,10 @@
+POST http://localhost:3000/create-internship
+Content-Type: application/json
+
+{
+    "title": "Create Internship",
+   "description": "Create a new internship",
+    "location": "SampleLocation",
+   "start_date": "23-01-2015",
+   "end_date": "23-01-2016"
+}
