@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="./css/style2.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Confirmation Page</h1>
+    </header>
+
+    <section>
+      <h2>Internship Details</h2>
+      <ul class="internship-details-container">
+        <li class="internship-details">
+          <strong style="font-size: 100px"><%= internship.title %></strong><br />
+          <p><strong>Description:</strong> <%= internship.description %></p>
+          <p><strong>Location:</strong> <%= internship.location %></p>
+          <p><strong>Start Date:</strong> <%= internship.start_date %></p>
+          <p><strong>End Date:</strong> <%= internship.end_date %></p>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; <%= year %> Student Hub. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

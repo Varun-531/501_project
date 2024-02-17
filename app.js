@@ -94,6 +94,22 @@ app.get("/internships", (req, res) => {
   });
 });
 
+app.get('/confirmation/:internshipId', async (req, res) => {
+  // Retrieve the internship details based on the provided internshipId
+  const internshipId = req.params.internshipId;
+
+  try {
+    // Fetch the internship details using the internshipId
+    const internship = await Internships.findByPk(internshipId);
+
+    // Render the confirmation page with the internship details and internshipId
+    res.render('confirmation', { internship, internshipId, year: new Date().getFullYear() });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 
 
 app.get("/home", async (req, res) => {
